@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.nameisjayant.demo.register.RegisterController" prefWidth="600.0">
+
+
+    <stylesheets>
+        <URL value="@style/login.css"/>
+    </stylesheets>
+
+    <HBox>
+        <ImageView fitHeight="36.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#back">
+            <image>
+                <Image url="@images/arrow_back.png"/>
+            </image>
+        </ImageView>
+    </HBox>
+
+    <VBox alignment="TOP_CENTER" spacing="20">
+        <Text text="Register As">
+            <font>
+                <Font size="35.0"/>
+            </font>
+        </Text>
+    </VBox>
+    <VBox>
+        <padding>
+            <Insets top="16.0"/>
+        </padding>
+        <HBox alignment="TOP_CENTER">
+            <ToggleButton onAction="#residentClick" text="Resident" fx:id="residentToggle">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </ToggleButton>
+            <HBox>
+                <padding>
+                    <Insets left="16.0"/>
+                </padding>
+                <ToggleButton onAction="#administratorClick"
+                              text="Administrator Staff" fx:id="staffToggle">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </ToggleButton>
+            </HBox>
+        </HBox>
+    </VBox>
+    <VBox spacing="20" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="16.0"/>
+        </padding>
+        <HBox prefWidth="400">
+            <TextField fx:id="firstname" promptText="Enter FirstName" prefHeight="40.0"
+                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8; -fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </TextField>
+        </HBox>
+        <HBox prefWidth="40">
+            <TextField fx:id="lastName" promptText="Enter LastName" prefHeight="40.0"
+                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </TextField>
+        </HBox>
+        <HBox prefWidth="40">
+            <TextField fx:id="email" promptText="Enter Email" prefHeight="40.0"
+                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </TextField>
+        </HBox>
+        <HBox prefWidth="40">
+            <TextField fx:id="subrubName" promptText="Enter SubrubaName" prefHeight="40.0"
+                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </TextField>
+        </HBox>
+        <HBox prefWidth="40">
+            <TextField fx:id="age" promptText="Enter Age" prefHeight="40.0"
+                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </TextField>
+        </HBox>
+        <HBox prefWidth="40">
+            <TextField fx:id="yearsLived" promptText="Enter No. of Years Lived" prefHeight="40.0"
+                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </TextField>
+        </HBox>
+        <HBox prefWidth="40">
+            <TextField fx:id="phone" promptText="Enter Phone Number" prefHeight="40.0"
+                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </TextField>
+        </HBox>
+        <HBox prefWidth="40">
+            <PasswordField fx:id="password" promptText="Enter Password" prefHeight="40.0"
+                           style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </PasswordField>
+        </HBox>
+    </VBox>
+    <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+    </padding>
+    <VBox alignment="TOP_CENTER" spacing="20">
+        <padding>
+            <Insets top="16.0"/>
+        </padding>
+        <Button layoutX="264.0" layoutY="504.0" onAction="#register" prefHeight="50.0" prefWidth="163.0"
+                style="-fx-background-color: #1e2b3c; -fx-background-radius: 8;"
+                text="REGISTER" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Button>
+    </VBox>
+
+</VBox>
