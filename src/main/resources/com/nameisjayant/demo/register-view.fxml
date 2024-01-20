@@ -36,21 +36,21 @@
             <Insets top="16.0"/>
         </padding>
         <HBox alignment="TOP_CENTER">
-            <ToggleButton onAction="#residentClick" text="Resident" fx:id="residentToggle">
+            <Button onAction="#residentClick" text="Resident" fx:id="residentToggle">
                 <font>
                     <Font name="System Bold" size="16.0"/>
                 </font>
-            </ToggleButton>
+            </Button>
             <HBox>
                 <padding>
                     <Insets left="16.0"/>
                 </padding>
-                <ToggleButton onAction="#administratorClick"
+                <Button onAction="#administratorClick"
                               text="Administrator Staff" fx:id="staffToggle">
                     <font>
                         <Font name="System Bold" size="16.0"/>
                     </font>
-                </ToggleButton>
+                </Button>
             </HBox>
         </HBox>
     </VBox>

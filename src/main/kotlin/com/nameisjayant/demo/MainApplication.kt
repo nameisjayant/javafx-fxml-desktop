@@ -1,19 +1,23 @@
 package com.nameisjayant.demo
 
+import com.nameisjayant.demo.utils.PreferenceStore
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
-import javafx.stage.FileChooser
 import javafx.stage.Stage
-import java.io.FileWriter
+import java.io.File
 import java.io.IOException
+import java.util.prefs.Preferences
 
+val CSV_FILE_PATH = System.getProperty("user.home") + "/Desktop/data.csv"
 
 class HelloApplication : Application() {
     override fun start(stage: Stage) {
         val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("start-view.fxml"))
         val scene = Scene(fxmlLoader.load(), 600.0, 400.0)
-        generateCsv()
+        val preferences = Preferences.userNodeForPackage(javaClass)
+        PreferenceStore.setPreference(preferences)
+        createCsvFileIfNotExists()
         stage.title = "NCIRS App"
         stage.scene = scene
         stage.show()
@@ -24,25 +28,13 @@ fun main() {
     Application.launch(HelloApplication::class.java)
 }
 
-private fun generateCsv() {
-    val fileChooser = FileChooser()
-    fileChooser.title = "Save CSV File"
-    fileChooser.extensionFilters.add(FileChooser.ExtensionFilter("CSV Files", "*.csv"))
-
-    val selectedFile = fileChooser.showSaveDialog(null)
-
-    if (selectedFile != null) {
-        try {
-            FileWriter(selectedFile).use { writer ->
-                // Writing CSV content
-                writer.append("Name, Age, Occupation\n")
-                writer.append("John Doe, 30, Engineer\n")
-                writer.append("Jane Smith, 25, Teacher\n")
-                writer.flush()
-                println("CSV file created successfully.")
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
+private fun createCsvFileIfNotExists() {
+    try {
+        val csvFile = File(CSV_FILE_PATH)
+        if (!csvFile.exists()) {
+            csvFile.createNewFile()
         }
+    } catch (e: IOException) {
+        e.printStackTrace()
     }
 }
