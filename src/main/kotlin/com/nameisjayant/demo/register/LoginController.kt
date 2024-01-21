@@ -90,16 +90,6 @@ class LoginController {
         loadScreen(Path.HOME_PATH, event)
     }
 
-    private fun appendDataToCsvFile(name: String, email: String) {
-        try {
-            FileWriter(CSV_FILE_PATH, true).use { writer ->
-                writer.append(name).append(",").append(email).append("\n")
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-    }
-
     private fun loadUserDataFromCsvFile() {
         try {
             Scanner(File(CSV_FILE_PATH)).use { scanner ->

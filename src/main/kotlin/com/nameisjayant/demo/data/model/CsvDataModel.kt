@@ -11,7 +11,7 @@ data class CsvDataModel(
     val phone: String = "",
     val password: String = "",
     val gender: String = "",
-    val cityCouncilName: String,
+    val cityCouncilName: String="",
     val incidentTime: String = "",
     val incidentType: String = "",
     val suburbIncidentOccurred: String = "",

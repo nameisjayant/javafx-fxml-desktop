@@ -83,12 +83,12 @@
             </TextField>
         </HBox>
         <HBox prefWidth="40">
-            <TextField fx:id="subrubName" promptText="Enter SubrubaName" prefHeight="40.0"
-                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+            <PasswordField fx:id="password" promptText="Enter Password" prefHeight="40.0"
+                           style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
                 <font>
                     <Font name="System Bold" size="18.0"/>
                 </font>
-            </TextField>
+            </PasswordField>
         </HBox>
         <HBox prefWidth="40">
             <TextField fx:id="age" promptText="Enter Age" prefHeight="40.0"
@@ -98,30 +98,38 @@
                 </font>
             </TextField>
         </HBox>
-        <HBox prefWidth="40">
-            <TextField fx:id="yearsLived" promptText="Enter No. of Years Lived" prefHeight="40.0"
-                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
-                <font>
-                    <Font name="System Bold" size="18.0"/>
-                </font>
-            </TextField>
+        <HBox fx:id="radioGroup" spacing="10">
+
         </HBox>
-        <HBox prefWidth="40">
-            <TextField fx:id="phone" promptText="Enter Phone Number" prefHeight="40.0"
-                       style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
-                <font>
-                    <Font name="System Bold" size="18.0"/>
-                </font>
-            </TextField>
-        </HBox>
-        <HBox prefWidth="40">
-            <PasswordField fx:id="password" promptText="Enter Password" prefHeight="40.0"
-                           style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
-                <font>
-                    <Font name="System Bold" size="18.0"/>
-                </font>
-            </PasswordField>
-        </HBox>
+        <VBox fx:id="staffParent">
+        </VBox>
+       <VBox fx:id="residentParent" spacing="16.0">
+           <HBox prefWidth="40">
+               <TextField fx:id="phone" promptText="Enter Phone Number" prefHeight="40.0"
+                          style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                   <font>
+                       <Font name="System Bold" size="18.0"/>
+                   </font>
+               </TextField>
+           </HBox>
+           <HBox prefWidth="40">
+               <TextField fx:id="subrubName" promptText="Enter SubrubaName" prefHeight="40.0"
+                          style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                   <font>
+                       <Font name="System Bold" size="18.0"/>
+                   </font>
+               </TextField>
+           </HBox>
+           <HBox prefWidth="40">
+               <TextField fx:id="yearsLived" promptText="Enter No. of Years Lived" prefHeight="40.0"
+                          style="-fx-border-color:#1e2b3c; -fx-background-radius: 8;-fx-border-radius: 8">
+                   <font>
+                       <Font name="System Bold" size="18.0"/>
+                   </font>
+               </TextField>
+           </HBox>
+       </VBox>
+
     </VBox>
     <padding>
         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>

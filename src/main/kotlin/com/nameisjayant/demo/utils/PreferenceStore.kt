@@ -8,4 +8,6 @@ object PreferenceStore {
         this.preferences = preferences
     }
 
+    val index = "index"
+
 }
