@@ -59,7 +59,7 @@
             <Insets top="16.0"/>
         </padding>
         <HBox prefWidth="400">
-            <TextField fx:id="username" promptText="Enter email" prefHeight="40.0"
+            <TextField fx:id="email" promptText="Enter email" prefHeight="40.0"
                        style="-fx-border-color:#1e2b3c; -fx-background-radius: 8; -fx-border-radius: 8">
                 <font>
                     <Font name="System Bold" size="18.0"/>

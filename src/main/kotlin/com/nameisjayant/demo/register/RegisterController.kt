@@ -1,10 +1,7 @@
 package com.nameisjayant.demo.register
 
 import com.nameisjayant.demo.data.model.CsvDataModel
-import com.nameisjayant.demo.utils.Path
-import com.nameisjayant.demo.utils.PreferenceStore
-import com.nameisjayant.demo.utils.appendDataToCsvFile
-import com.nameisjayant.demo.utils.loadScreen
+import com.nameisjayant.demo.utils.*
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.beans.value.ObservableValue
@@ -182,12 +179,13 @@ class RegisterController {
                     gender = currentGender.value,
                     phone = phone.text,
                     suburbName = subrubName.text,
-                    noYearsLived = yearsLived.text
+                    noYearsLived = yearsLived.text,
+                    userType = RESIDENT_TYPE
                 )
             ) {
-                loadScreen(Path.INCIDENT_PATH, event) {
+                /*loadScreen(Path.INCIDENT_PATH, event) {
                     PreferenceStore.preferences.put(PreferenceStore.index, "1")
-                }
+                }*/
             }
         }
     }

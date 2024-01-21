@@ -7,5 +7,4 @@ object Path {
     const val REGISTER_PATH = "src/main/resources/com/nameisjayant/demo/register-view.fxml"
     const val INCIDENT_PATH = "src/main/resources/com/nameisjayant/demo/incident-view.fxml"
 
-
 }

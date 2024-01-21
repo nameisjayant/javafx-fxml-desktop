@@ -1,7 +1,10 @@
 package com.nameisjayant.demo.data.model
 
+import java.util.UUID
+
 data class CsvDataModel(
-    val residentId: String = "",
+    val userType: String = "",
+    val residentId: String = UUID.randomUUID().toString(),
     val firstName: String = "",
     val lastName: String = "",
     val email: String = "",
@@ -11,7 +14,7 @@ data class CsvDataModel(
     val phone: String = "",
     val password: String = "",
     val gender: String = "",
-    val cityCouncilName: String="",
+    val cityCouncilName: String = "",
     val incidentTime: String = "",
     val incidentType: String = "",
     val suburbIncidentOccurred: String = "",
@@ -22,5 +25,6 @@ data class CsvDataModel(
     val damage: String = "",
     val estimateLoss: String = "",
     val injury: String = "",
+    val injuryDetail: String = "",
     val residentWhoReportedIncident: String = ""
 )

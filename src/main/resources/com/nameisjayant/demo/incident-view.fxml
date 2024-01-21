@@ -7,6 +7,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.nameisjayant.demo.data.main.IncidentController" prefWidth="600.0">
@@ -35,7 +37,7 @@
 
 
     <VBox spacing="20">
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="incidentTime" promptText="Enter Incident Time" prefHeight="40.0"
@@ -47,7 +49,7 @@
         <VBox fx:id="incidentParent" spacing="16">
 
         </VBox>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="subrubIncidentOccurred" promptText="Enter Subrub Incident Occurred" prefHeight="40.0"
@@ -56,7 +58,7 @@
                 <Font name="System Bold" size="18.0"/>
             </font>
         </TextField>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="streetIncidentOccurred" promptText="Enter Street Occurred" prefHeight="40.0"
@@ -65,7 +67,7 @@
                 <Font name="System Bold" size="18.0"/>
             </font>
         </TextField>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="ageCategorySuspect" promptText="Enter Age Category of the Suspect" prefHeight="40.0"
@@ -77,7 +79,7 @@
         <HBox fx:id="radioGroup" spacing="16">
 
         </HBox>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="noOfSuspectInvolved" promptText="Enter No of suspect involved" prefHeight="40.0"
@@ -86,7 +88,7 @@
                 <Font name="System Bold" size="18.0"/>
             </font>
         </TextField>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="damage" promptText="Enter damage" prefHeight="40.0"
@@ -95,7 +97,7 @@
                 <Font name="System Bold" size="18.0"/>
             </font>
         </TextField>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="estimateLoss" promptText="Enter Estimate (in dollars)" prefHeight="40.0"
@@ -107,7 +109,7 @@
         <VBox fx:id="injuryParent" spacing="16">
 
         </VBox>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="detailOfInjury" promptText="Enter Injury Detail" prefHeight="40.0"
@@ -116,7 +118,7 @@
                 <Font name="System Bold" size="18.0"/>
             </font>
         </TextField>
-        <padding >
+        <padding>
             <Insets top="16"/>
         </padding>
         <TextField fx:id="residentWhoReported" promptText="Enter Resident who reported the incident" prefHeight="40.0"
@@ -139,5 +141,6 @@
             </font>
         </Button>
     </VBox>
+
 
 </VBox>

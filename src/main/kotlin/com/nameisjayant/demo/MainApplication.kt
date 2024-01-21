@@ -1,6 +1,8 @@
 package com.nameisjayant.demo
 
 import com.nameisjayant.demo.utils.PreferenceStore
+import com.nameisjayant.demo.utils.createCsvFileIfNotExists
+import com.nameisjayant.demo.utils.getPref
 import com.nameisjayant.demo.utils.loadScreen
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
@@ -10,7 +12,6 @@ import java.io.File
 import java.io.IOException
 import java.util.prefs.Preferences
 
-val CSV_FILE_PATH = System.getProperty("user.home") + "/Desktop/data.csv"
 
 class HelloApplication : Application() {
     override fun start(stage: Stage) {
@@ -18,7 +19,7 @@ class HelloApplication : Application() {
         PreferenceStore.setPreference(preferences)
         createCsvFileIfNotExists()
         stage.title = "NCIRS App"
-        when (PreferenceStore.preferences.get(PreferenceStore.index, "0")) {
+        when (getPref(PreferenceStore.index)) {
             "1" -> {
                 val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("incident-view.fxml"))
                 val scene = Scene(fxmlLoader.load())
@@ -40,13 +41,3 @@ fun main() {
     Application.launch(HelloApplication::class.java)
 }
 
-private fun createCsvFileIfNotExists() {
-    try {
-        val csvFile = File(CSV_FILE_PATH)
-        if (!csvFile.exists()) {
-            csvFile.createNewFile()
-        }
-    } catch (e: IOException) {
-        e.printStackTrace()
-    }
-}
