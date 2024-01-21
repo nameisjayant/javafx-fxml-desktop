@@ -27,6 +27,13 @@ class HelloApplication : Application() {
                 stage.show()
             }
 
+            "2" -> {
+                val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("administator-view.fxml"))
+                val scene = Scene(fxmlLoader.load())
+                stage.scene = scene
+                stage.show()
+            }
+
             else -> {
                 val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("start-view.fxml"))
                 val scene = Scene(fxmlLoader.load(), 600.0, 400.0)

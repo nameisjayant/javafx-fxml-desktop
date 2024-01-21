@@ -41,7 +41,7 @@ class LoginController {
 
     @FXML
     fun login(event: Event) {
-        if (userDataList.isNotEmpty() && email.text.isNotEmpty() && password.text.isNotEmpty()) {
+        if (email.text.isNotEmpty() && password.text.isNotEmpty()) {
             val isContain = userDataList.any {
                 it?.let {
                     it.containsValue(email.text)
@@ -49,11 +49,19 @@ class LoginController {
                             && it.containsValue(selected.value)
                 } == true
             }
-            if (isContain)
-                showDialog("Logged Successful")
+            if (isContain && selected.value == RESIDENT_TYPE)
+                loadScreen(Path.INCIDENT_PATH, event) {
+                    setPref(PreferenceStore.index, "1")
+                }
+            else if (isContain && selected.value == ADMINISTRATION_TYPE)
+                loadScreen(Path.ADMINISTRATOR_PATH, event) {
+                    setPref(PreferenceStore.index, "2")
+                }
             else
-                showDialog("Wrong Email and Password")
-        }
+                showDialog("Wrong Email and Password..!")
+
+        } else
+            showDialog("Please fill all the fields")
     }
 
     @FXML

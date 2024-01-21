@@ -151,7 +151,7 @@ class IncidentController {
                 CsvDataModel(
                     incidentTime = incidentTime.text,
                     incidentType = incidentType.text,
-                    suburbName = subrubIncidentOccurred.text,
+                    suburbIncidentOccurred = subrubIncidentOccurred.text,
                     streetIncidentOccurred = streetIncidentOccurred.text,
                     ageCategoryOfSuspect = ageCategorySuspect.text,
                     suspectedGender = currentGender.value,
@@ -159,7 +159,8 @@ class IncidentController {
                     estimateLoss = estimateLoss.text,
                     injury = injury.text,
                     injuryDetail = detailOfInjury.text,
-                    residentWhoReportedIncident = residentWhoReported.text
+                    residentWhoReportedIncident = residentWhoReported.text,
+                    suspectNumbers = noOfSuspectInvolved.text
                 )
             ) {
                 incidentType.text = ""
