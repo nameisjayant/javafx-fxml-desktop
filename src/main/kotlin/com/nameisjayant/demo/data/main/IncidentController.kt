@@ -160,7 +160,9 @@ class IncidentController {
                     injury = injury.text,
                     injuryDetail = detailOfInjury.text,
                     residentWhoReportedIncident = residentWhoReported.text,
-                    suspectNumbers = noOfSuspectInvolved.text
+                    suspectNumbers = noOfSuspectInvolved.text,
+                    userType = INCIDENT_TYPE,
+                    userId = getPref(PreferenceStore.userId)
                 )
             ) {
                 incidentType.text = ""
@@ -178,5 +180,10 @@ class IncidentController {
             }
         } else
             showDialog("Please fill all the details..!")
+    }
+
+    @FXML
+    private fun viewIncident(event: Event) {
+        loadScreen(Path.VIEW_RESIDENT_PROFILE, event)
     }
 }

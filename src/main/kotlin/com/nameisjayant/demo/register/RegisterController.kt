@@ -169,20 +169,22 @@ class RegisterController {
             val isContain = userDataList.any {
                 it?.containsValue(email.text) == true
             }
+            val model = CsvDataModel(
+                firstName = firstname.text,
+                lastName = lastName.text,
+                email = email.text,
+                password = password.text,
+                age = age.text,
+                gender = currentGender.value,
+                userType = ADMINISTRATION_TYPE
+            )
             if (!isContain)
                 appendDataToCsvFile(
-                    CsvDataModel(
-                        firstName = firstname.text,
-                        lastName = lastName.text,
-                        email = email.text,
-                        password = password.text,
-                        age = age.text,
-                        gender = currentGender.value,
-                        userType = ADMINISTRATION_TYPE
-                    )
+                    model
                 ) {
                     loadScreen(Path.ADMINISTRATOR_PATH, event) {
-                        PreferenceStore.preferences.put(PreferenceStore.index, "2")
+                        setPref(PreferenceStore.index, "2")
+                        setPref(PreferenceStore.userId, model.residentId)
                     }
                 } else
                 showDialog("Email Already Exits..!")
@@ -205,23 +207,25 @@ class RegisterController {
             val isContain = userDataList.any {
                 it?.containsValue(email.text) == true
             }
+            val model = CsvDataModel(
+                firstName = firstname.text,
+                lastName = lastName.text,
+                email = email.text,
+                password = password.text,
+                age = age.text,
+                gender = currentGender.value,
+                phone = phone.text,
+                suburbName = subrubName.text,
+                noYearsLived = yearsLived.text,
+                userType = RESIDENT_TYPE
+            )
             if (!isContain) {
                 appendDataToCsvFile(
-                    CsvDataModel(
-                        firstName = firstname.text,
-                        lastName = lastName.text,
-                        email = email.text,
-                        password = password.text,
-                        age = age.text,
-                        gender = currentGender.value,
-                        phone = phone.text,
-                        suburbName = subrubName.text,
-                        noYearsLived = yearsLived.text,
-                        userType = RESIDENT_TYPE
-                    )
+                    model
                 ) {
                     loadScreen(Path.INCIDENT_PATH, event) {
-                        PreferenceStore.preferences.put(PreferenceStore.index, "1")
+                        setPref(PreferenceStore.index, "1")
+                        setPref(PreferenceStore.userId, model.residentId)
                     }
                 }
             } else

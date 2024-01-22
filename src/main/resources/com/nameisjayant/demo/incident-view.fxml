@@ -12,6 +12,14 @@
         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
     </padding>
 
+    <HBox>
+        <Hyperlink text="View Profile" onAction="#viewIncident" underline="true">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Hyperlink>
+    </HBox>
+
     <HBox alignment="TOP_RIGHT">
         <Button layoutX="264.0" layoutY="504.0" onAction="#logout" prefHeight="30.0" prefWidth="140.0"
                 style="-fx-background-color: #FF0000; -fx-background-radius: 8;"

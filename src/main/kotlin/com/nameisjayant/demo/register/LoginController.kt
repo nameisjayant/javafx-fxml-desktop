@@ -44,6 +44,7 @@ class LoginController {
         if (email.text.isNotEmpty() && password.text.isNotEmpty()) {
             val isContain = userDataList.any {
                 it?.let {
+                    setPref(PreferenceStore.userId, it["ResidentId"] ?: "")
                     it.containsValue(email.text)
                             && it.containsValue(password.text)
                             && it.containsValue(selected.value)

@@ -9,5 +9,6 @@ object PreferenceStore {
     }
 
     val index = "index"
+    val userId = "userId"
 
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.nameisjayant.demo.data.main.ViewResidentProfile"
+      prefHeight="400.0" prefWidth="600.0">
+    <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+    </padding>
+    <HBox>
+        <ImageView fitHeight="36.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#onBack">
+            <image>
+                <Image url="@images/arrow_back.png"/>
+            </image>
+        </ImageView>
+    </HBox>
+    <HBox alignment="TOP_CENTER">
+        <Label text="Profile">
+            <font>
+                <Font size="30"/>
+            </font>
+        </Label>
+    </HBox>
+    <VBox spacing="16.0">
+        <Label fx:id="firstname">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+
+        <Label fx:id="lastname">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+        <Label fx:id="email">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+        <Label fx:id="age">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+
+        <Label fx:id="gender">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+
+    </VBox>
+</VBox>

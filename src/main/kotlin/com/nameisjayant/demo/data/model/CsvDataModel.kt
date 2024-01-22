@@ -5,7 +5,7 @@ import java.util.UUID
 data class CsvDataModel(
     val userType: String = "-",
     val residentId: String = UUID.randomUUID().toString(),
-    val firstName: String = "-",
+    var firstName: String = "-",
     val lastName: String = "-",
     val email: String = "-",
     val suburbName: String = "-",
@@ -26,5 +26,6 @@ data class CsvDataModel(
     val estimateLoss: String = "-",
     val injury: String = "-",
     val injuryDetail: String = "-",
-    val residentWhoReportedIncident: String = "-"
+    val residentWhoReportedIncident: String = "-",
+    val userId:String = "-"
 )

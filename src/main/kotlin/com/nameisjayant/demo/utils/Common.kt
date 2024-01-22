@@ -29,7 +29,7 @@ fun loadScreen(fxml: String, event: Event, store: () -> Unit = {}) {
 }
 
 const val CSV_HEADER =
-    "ResidentId, UserType ,FirstName, LastName, Email, Password, Age, Gender, Phone, Subrub Name, City Council Name, Incident Time, Incident Type, Suburb Incident Occurred, Street Incident Occurred, Age Category Of Suspect, Number of Suspect, Damage, Suspect Gender, Injury, Injury Detail, Estimate Loss(in dollars), Resident Who Reported Incident, Incident Type, No of Years Lived"
+    "ResidentId, UserType ,FirstName, LastName, Email, Password, Age, Gender, Phone, Subrub Name, City Council Name, Incident Time, Incident Type, Suburb Incident Occurred, Street Incident Occurred, Age Category Of Suspect, Number of Suspect, Damage, Suspect Gender, Injury, Injury Detail, Estimate Loss(in dollars), Resident Who Reported Incident, Incident Type, UserId, No of Years Lived"
 
 fun appendDataToCsvFile(dataModel: CsvDataModel, move: () -> Unit) {
     try {
@@ -59,6 +59,7 @@ fun appendDataToCsvFile(dataModel: CsvDataModel, move: () -> Unit) {
                 .append(dataModel.estimateLoss).append(",")
                 .append(dataModel.residentWhoReportedIncident).append(",")
                 .append(dataModel.incidentType).append(",")
+                .append(dataModel.userId).append(",")
                 .append(dataModel.noYearsLived)
                 .append("\n")
         }
@@ -80,10 +81,7 @@ fun showDialog(
 
 
 fun setPref(key: String, value: String) = PreferenceStore.preferences.put(key, value)
-
-
 fun getPref(key: String): String = PreferenceStore.preferences.get(key, "0")
-
 
 fun createCsvFileIfNotExists() {
     try {
@@ -135,9 +133,9 @@ fun loadUserDataFromCsvFile(): MutableList<Map<String, String>?> {
                     userData["EstimateLoss"] = data[21]
                     userData["ResidentWhoReportedIncident"] = data[22]
                     userData["IncidentType"] = data[23]
-                    userData["NoOfYearsLived"] = data[24]
+                    userData["userId"] = data[24]
+                    userData["NoOfYearsLived"] = data[25]
                     userDataList.add(userData)
-
                 }
             }
         }
